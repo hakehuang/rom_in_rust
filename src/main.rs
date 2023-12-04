@@ -6,6 +6,7 @@
 extern crate cortex_m_rt as rt;
 extern crate panic_halt;
 
+use cortex_m::asm;
 use rt::entry;
 
 const FFRO_STABLE_TIME: u32 = 12;
@@ -49,6 +50,8 @@ pub unsafe extern "C" fn FSL_ROM_OTP_FUSE_READ_ADDR(addr: u32, data: &mut u32) -
 
 #[entry]
 fn main() -> ! {
+    asm::nop();
+
     loop {
         // your code goes here
     }
